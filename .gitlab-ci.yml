@@ -1,0 +1,14 @@
+image: amazoncorretto:21-alpine
+
+stages:
+  - clean
+
+build-project:
+    stage: clean
+    before_script:
+      - sh ./pre-script.sh
+    script:
+        - echo "Building Jar"
+        - ant -version
+        - ant clean
+        - echo "Done Building..."
